@@ -7,3 +7,15 @@ channel = "stable-24_05"
 [deployment]
 run = ["bash", "main.sh"]
 deploymentTarget = "cloudrun"
+
+[workflows]
+runButton = "Start Run Button"
+
+[[workflows.workflow]]
+name = "Start Run Button"
+mode = "sequential"
+author = 41366292
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "bash main.sh"
