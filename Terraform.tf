@@ -8,10 +8,22 @@ terraform {
 }
 
 
-#Variable
+#Variables
 variable "aws_region" {
   type        = string
   default     = env("AWS_REGION")
+}
+
+
+variable "access_key" {
+  type        = string
+  default     = env("TERRY_ACCESS_KEY")
+  
+}
+
+variable "secret_key" {
+  type        = string
+  default     = env("TERRY_SECRET_KEY")
 }
 
 
