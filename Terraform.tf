@@ -33,4 +33,8 @@ provider "aws" {
 # Create a VPC
 resource "aws_vpc" "VPC_from_a_GOV" {
   cidr_block = "10.0.0.0/16"
+
+tags = {
+  Name = "VPC_from_a_GOV"
+}
 }
