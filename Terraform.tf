@@ -7,9 +7,17 @@ terraform {
   }
 }
 
+
+#Variable
+variable "aws_region" {
+  type        = string
+  default     = env("AWS_REGION")
+}
+
+
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-1"
+  region = "var.aws_region"
 }
 
 # Create a VPC
