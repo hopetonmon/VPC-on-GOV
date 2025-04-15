@@ -9,33 +9,28 @@ terraform {
 
 
 #Variables
-variable "aws_region" {
+variable "AWS_REGION" {
   type        = string
-  default     = env("AWS_REGION")
 }
 
 
-variable "access_key" {
+variable "TERRY_ACCESS_KEY" {
   type        = string
-  default     = env("TERRY_ACCESS_KEY")
-  
 }
 
-variable "secret_key" {
+variable "TERRY_SECRET_KEY" {
   type        = string
-  default     = env("TERRY_SECRET_KEY")
 }
 
 
 # Configure the AWS Provider w/ Credentials
 provider "aws" {
-  access_key = "var.access_key"
-  secret_key = "var.secret_key"
-  region = "var.aws_region"
+  access_key = var.TERRY_ACCESS_KEY
+  secret_key = var.TERRY_SECRET_KEY
+  region = var.AWS_REGION
 }
 
 # Create a VPC
 resource "aws_vpc" "VPC_from_a_GOV" {
   cidr_block = "10.0.0.0/16"
 }
-
