@@ -11,15 +11,18 @@ terraform {
 #Variables
 variable "AWS_REGION" {
   type        = string
+  sensitive = true #Mark as sensitive to protect the value in the state file
 }
 
 
 variable "TERRY_ACCESS_KEY" {
   type        = string
+  sensitive = true #Mark as sensitive to protect the value in the state file
 }
 
 variable "TERRY_SECRET_KEY" {
   type        = string
+  sensitive = true #Mark as sensitive to protect the value in the state file
 }
 
 
